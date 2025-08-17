@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Classifier</title>
+    <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <h1>Cat Classifier</h1>
+        <div class="controls">
+            <label>Feeder:
+                <select id="feederSelect"></select>
+            </label>
+            <label>Source:
+                <select id="sourceSelect">
+                    <option value="cats" selected>cats (pre-filtered)</option>
+                    <option value="not_cat">not_cat (pre-filtered)</option>
+                </select>
+            </label>
+            <button id="refreshBtn">Reload</button>
+            <button id="shuffleBtn" title="Shuffle order (keyboard: s)">Shuffle</button>
+            <span id="progress"></span>
+        </div>
+    </header>
+    <div class="container">
+        <div class="gallery">
+            <div class="main-image" id="mainImageWrapper">
+                <img src="" alt="Main" id="mainImage" draggable="true" />
+                <div class="hint">Drag image to a cat box or press hotkey (1-5, U, N). Arrow keys navigate. Space = next.</div>
+            </div>
+            <div class="nav-buttons">
+                <button id="prevBtn" title="Left Arrow">◀ Prev</button>
+                <button id="nextBtn" title="Right Arrow / Space">Next ▶</button>
+                <button id="undoBtn" title="Undo last classification (Ctrl+Z)">Undo</button>
+            </div>
+            <div class="thumbnails" id="thumbnails"></div>
+        </div>
+    <div class="categories" id="categories"></div>
+    </div>
+    <footer class="footer">Classification target folders will be created under <code>public/cat_pics/classified/&lt;category&gt;</code>.</footer>
+    <script src="/src/app.js" type="module"></script>
+</body>
+</html>
